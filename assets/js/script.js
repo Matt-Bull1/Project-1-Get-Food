@@ -4,7 +4,9 @@ var url = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 
 
 searchBtn.addEventListener("click", () => {
+
     var userInp = document.getElementById("user-inp").value;
+
     if (userInp.length == 0) {
       result.innerHTML = `<h3>Input Field Cannot Be Empty</h3>`;
     } else {
@@ -24,3 +26,4 @@ searchBtn.addEventListener("click", () => {
 
     })}
     });
+
