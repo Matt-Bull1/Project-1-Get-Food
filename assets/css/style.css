@@ -38,9 +38,28 @@ div.box {
     -webkit-animation: giro 1s 1;
     animation: giro 1s 1;
     perspective: 800px;
+    position: relative;
+    width: 36%;
     
 }
+.nutrition-front {
+    backface-visibility: hidden;
+    width: 100% !important;
+    z-index: 1000;
+    position: absolute;
+    height: 100%;
+}
 
+
+.nutrition-back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    transform: rotateY(180deg);
+    width: 100% !important;
+    z-index: 999;
+    height: 100%;
+}
 .nutrition:hover {
     transform: rotateY( 180deg);
 }
