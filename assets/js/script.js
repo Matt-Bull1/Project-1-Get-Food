@@ -3,7 +3,8 @@ var searchBtn = document.getElementById("search-btn");
 var url = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 var nameResult = document.getElementById("foodName")
 var displayIng = document.getElementById("displayIng")
-var displayIMG = document.getElementById("displayIMG")
+var displayIMG = document.getElementById("displayIMG") 
+var ingredientsEl = document.getElementById("ingredientList")
 searchBtn.addEventListener("click", () => {
     var userInp = document.getElementById("user-inp").value;
         console.log(userInp)
@@ -40,6 +41,10 @@ searchBtn.addEventListener("click", () => {
             ingredientList.push(measurments + " " + ingredients)
           }
         }
+        ingredientsEl.innerHTML = ingredientList.join("<br/>"
+        )
+
+        console.log(ingredientList)
 displayIMG.innerHTML = "<img src =" + foodIMG + ">"
     })}
    });
