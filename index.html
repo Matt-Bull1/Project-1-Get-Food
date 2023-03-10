@@ -11,7 +11,7 @@
   <header class="section">
     <div class="container">
       <h1 class="title">
-        Hello Foodie
+        Hello Foodie!
       </h1>
     </div>
   </header>
@@ -21,7 +21,7 @@
     <form class="search box">
       <div class="field">
 
-        <label class="label">Search</label>
+        <label for="search-recipe" class="label">Search</label>
         
         <div class="control">
           <input class="input" type="recipe" placeholder="Search Recipes">
@@ -32,10 +32,18 @@
         <div class="buttons">
           <button class="button is-link is-light">Submit</button>
         </div>
+
+        <div class="row">
+          <ul id="recipe-results" class="list-group"></ul>
+          <button id="clear-storage" class="button is-link is-light">Clear</button>   
+        </div>
+
+        
       </div> 
     </form>
     
-    <div class="box">
+    
+    <div class="recipe box">
       <label class="label">Recipes</label>
     </div>
 
