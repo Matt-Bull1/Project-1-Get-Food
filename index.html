@@ -6,26 +6,62 @@
     <title>Foodie</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    
   </head>
   <body>
-  <section class="section">
+  <header class="section">
     <div class="container">
       <h1 class="title">
-        Hello World
+        Hello Foodie
       </h1>
-      <p class="subtitle">
-        My first website with <strong>Bulma</strong>!
-      </p>
+    </div>
+  </header>
+  
+  <section>
+
+    <form class="search box">
+      <div class="field">
+
+        <label class="label">Search</label>
+        
+        <div class="control">
+          <input id= "input" class="input" type="text" placeholder="Search Recipes">
+          <button id= "search-btn" type = "button" class="button is-link is-light">Submit</button>
+        </div>
+      </div> 
+    </form>
+    
+    <div class="box">
+      <label class="label">Recipes</label>
     </div>
 
-    <form class="box">
-      <div class="field">
-        <label class="label">Search</label>
-        <div class="control">
-          <input class="input" type="email" placeholder="Search Recipes">
-        </div>
+
+    <div class="nutrition">
+      <div class="nutrition-front box">
+        <label class="label">Nutritional information / Ingredients</label>
       </div>
+      <div class="nutrition-back box">
+        <label class="label">Nutritional information / Ingredients</label>
+      </div> 
+    </div>
+
 
   </section>
+
+
+
+  
+ 
+
+
+
+
+
+  
   </body>
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="./assets/js/script.js"></script>
 </html>
+
+<!-- <script src="./assets/js/script.js"></script> -->
+<!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
