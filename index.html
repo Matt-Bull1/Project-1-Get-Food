@@ -24,13 +24,13 @@
         <label for="search-recipe" class="label">Search</label>
         
         <div class="control">
-          <input class="input" type="recipe" placeholder="Search Recipes">
+          <input id="user-inp" class="input" type="recipe" placeholder="Search Recipes">
         </div>
         
 
         
         <div class="buttons">
-          <button class="button is-link is-light">Submit</button>
+          <button id="search-btn" type="button" class="button is-link is-light">Submit</button>
         </div>
 
         <div class="row">
@@ -42,9 +42,12 @@
       </div> 
     </form>
     
-    
+
     <div class="recipe box">
       <label class="label">Recipes</label>
+      <div id="displayIMG"></div>
+      <div id="foodName" class="label"></div>
+      <div id="result"></div>    
     </div>
 
 
@@ -69,6 +72,6 @@
 
 
 
-  <script src="./assets/script.js"></script>
+  <script src="assets/js/script.js"></script>
   </body>
 </html>

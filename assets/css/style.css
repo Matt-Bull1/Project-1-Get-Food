@@ -24,6 +24,14 @@ div.box {
     
 }
 
+#result {
+    overflow: auto;
+    height:calc(100% - 260px);
+}
+#displayIMG {
+    width: 200px;
+}
+
 .nutrition {
     transform-style: preserve-3d;
     transition: transform 0.4s ease 0s;
