@@ -39,6 +39,7 @@ div.box {
     width: 36%;
     
 }
+
 .nutrition-front {
     backface-visibility: hidden;
     width: 100% !important;
@@ -47,11 +48,12 @@ div.box {
     height: 100%;
 }
 
-.flip.button {
+.ingredientsBtn.button {
     left: 54%;
     top: 6%;
     width: 48%;
     height: 10%;
+    
 
 
 } 
@@ -66,11 +68,17 @@ div.box {
     z-index: 999;
     height: 100%;
 }
-.nutrition:hover {
+.flip {
     transform: rotateY( 180deg);
 }
 
- 
+#flipBtn {
+    left: 54%;
+    top: 6%;
+    width: 48%;
+    height: 10%;
+    transform: rotateY(0deg);
+}
 
 
   
