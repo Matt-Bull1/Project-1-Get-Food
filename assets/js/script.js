@@ -7,6 +7,7 @@ var nameResult = document.getElementById("foodName")
 var displayIng = document.getElementById("displayIng")
 var displayIMG = document.getElementById("displayIMG") 
 var ingredientsEl = document.getElementById("ingredientList")
+var userInp = document.getElementById("user-inp")
 
 flipBtn.addEventListener("click", () => {
     var flipCard = document.getElementById("nutrition")
@@ -20,16 +21,26 @@ returnBtn.addEventListener("click", () => {
     flipCard.classList.remove("flip")
 } )
 
-
-
-
 searchBtn.addEventListener("click", () => {
-    var userInp = document.getElementById("user-inp").value;
+getRecipe()  
+});
+
+userInp.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        getRecipe();
+        console.log()
+    }
+
+})
+
+function getRecipe () {
+    var userInpVal = userInp.value
         console.log(userInp)
-    if (userInp.length == 0) {
+    if (userInpVal.length == 0) {
       result.innerHTML = `<h3>Input Field Cannot Be Empty</h3>`;
     } else {
-    fetch(url + userInp)
+    fetch(url + userInpVal)
     .then((response) => response.json())
     .then((data) => {
         console.log(data)
@@ -65,7 +76,9 @@ searchBtn.addEventListener("click", () => {
         console.log(ingredientList)
 displayIMG.innerHTML = "<img src =" + foodIMG + ">"
     })}
-   });
+}
+
+
 
 
 
