@@ -3,8 +3,8 @@
 ## Description
 User Story 
 AS user
-I want to view all the resturants in my area
-SO THAT I can eat lunch with my friends. 
+I want to view different recipes
+SO THAT I can cook for my friends. 
 
 ## Acceptance Criteria
 * Use a CSS framework other than Bootstrap.
@@ -29,6 +29,9 @@ SO THAT I can eat lunch with my friends.
 
 
 ## Work Completed 
+* Using Bulma as CSS framework
+* Two server-side APIs we used in the project: TheMealDB(https://www.themealdb.com/browse.php?s=meal) Edamam(https://www.edamam.com)
+* Created History log to display previous searches 
 
 ## Website 
 
