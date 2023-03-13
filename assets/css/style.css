@@ -14,6 +14,11 @@ section {
     width: 17%;
 }
 
+.list-group-item.active {
+    background-color: #ae86b5;
+    border-color: #ae86b5;
+}
+
 .button {
     margin-top: 4%;
 }
