@@ -1,64 +1,72 @@
 body {
-    height: 100vh;
-    background-color: #ae86b5;
+  height: 100vh;
+  background-color: #ae86b5;
 }
 
 section {
-    display: flex;
-    height: 75vh;
-    gap: 3%;
+  display: flex;
+  height: 75vh;
+  gap: 3%;
 }
 
 .search.box {
-    margin-inline-start: 1.5%;
-    width: 17%;
+  margin-inline-start: 1.5%;
+  width: 17%;
 }
 
 .button {
-    margin-top: 4%;
+  margin-top: 4%;
 }
 
 div.box {
-    margin-inline-start: -1%;
-    width: 38%;
-    
+  margin-inline-start: -1%;
+  width: 38%;
+  
+}
+
+#result {
+  overflow: auto;
+  height:calc(100% - 260px);
+}
+#displayIMG {
+  width: 200px;
 }
 
 .nutrition {
-    transform-style: preserve-3d;
-    transition: transform 0.4s ease 0s;
-    -webkit-animation: giro 1s 1;
-    animation: giro 1s 1;
-    perspective: 800px;
-    
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease 0s;
+  -webkit-animation: giro 1s 1;
+  animation: giro 1s 1;
+  perspective: 800px;
+  
 }
 
 .nutrition:hover {
-    transform: rotateY( 180deg);
+  transform: rotateY( 180deg);
 }
 
- 
+
 
 
 @-webkit-keyframes giro {
-    from {
-      transform: rotateY( 180deg);
-    }
-    to {
-      transform: rotateY( 0deg);
-    }
+  from {
+    transform: rotateY( 180deg);
   }
-  
-  @keyframes giro {
-    from {
-      transform: rotateY( 180deg);
-    }
-    to {
-      transform: rotateY( 0deg);
-    }
+  to {
+    transform: rotateY( 0deg);
   }
-  
-   
+}
+
+@keyframes giro {
+  from {
+    transform: rotateY( 180deg);
+  }
+  to {
+    transform: rotateY( 0deg);
+  }
+}
+
+ 
 .box{
-    margin-bottom: 0 !important;    
+  margin-bottom: 0 !important;    
 }

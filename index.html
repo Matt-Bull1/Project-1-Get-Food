@@ -6,13 +6,12 @@
     <title>Foodie</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    
   </head>
   <body>
   <header class="section">
     <div class="container">
       <h1 class="title">
-        Hello Foodie
+        Hello Foodie!
       </h1>
     </div>
   </header>
@@ -22,17 +21,33 @@
     <form class="search box">
       <div class="field">
 
-        <label class="label">Search</label>
+        <label for="search-recipe" class="label">Search</label>
         
         <div class="control">
-          <input id= "input" class="input" type="text" placeholder="Search Recipes">
-          <button id= "search-btn" type = "button" class="button is-link is-light">Submit</button>
+          <input id="user-inp" class="input" type="recipe" placeholder="Search Recipes">
         </div>
+        
+
+        
+        <div class="buttons">
+          <button id="search-btn" type="button" class="button is-link is-light">Submit</button>
+        </div>
+
+        <div class="row">
+          <ul id="recipe-results" class="list-group"></ul>
+          <button id="clear-storage" class="button is-link is-light">Clear</button>   
+        </div>
+
+        
       </div> 
     </form>
     
-    <div class="box">
+
+    <div class="recipe box">
       <label class="label">Recipes</label>
+      <div id="displayIMG"></div>
+      <div id="foodName" class="label"></div>
+      <div id="result"></div>    
     </div>
 
 
@@ -45,6 +60,33 @@
       </div> 
     </div>
 
+    <div class="columns is-centered">
+      <table class="table">
+        <thead>
+          <tr>
+              <th>>Ingredients</th>
+              <th>Calories</th>
+              <th>Fat</th>
+              <th>Cholesterol</th>
+              <th>Carbs</th>
+              <th>Sodium</th>
+              <th>Protein</th>
+          </tr>
+      </thead>
+      <tfoot id="nutrition_foot">
+          <tr>
+              <th></th>
+              <th></th>
+              <th>Total</th>
+              <th id="total_cal">1290</th>
+              <th></th>
+          </tr>
+      </tfoot>
+      <tbody id="nutrition_body">
+      </tbody>
+  </table>
+</div>
+
 
   </section>
 
@@ -56,12 +98,7 @@
 
 
 
-
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="assets/js/script.js"></script>
   </body>
-  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="./assets/js/script.js"></script>
 </html>
-
-<!-- <script src="./assets/js/script.js"></script> -->
-<!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
