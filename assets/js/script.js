@@ -6,6 +6,8 @@ var displayIng = document.getElementById("displayIng")
 var displayIMG = document.getElementById("displayIMG")
 var ingredientsEl = document.getElementById("ingredientList");
 var userInp = document.getElementById("user-inp")
+var lastRecipe = "";
+var currentRecipe = "";
 
 
 var nutritionUrl = "https://api.edamam.com/api/nutrition-data?app_id=97a4a0a7&app_key=c9964d9d543eaae9d00a7817640d1624&nutrition-type=cooking&ingr="
@@ -45,6 +47,7 @@ function getRecipe () {
     fetch(url + userInp)
     .then((response) => response.json())
     .then(async (data) => {
+        saveRecipe(userInp)
         console.log(data)
         console.log(data.meals.length);
         var arrayLength = data.meals.length;
