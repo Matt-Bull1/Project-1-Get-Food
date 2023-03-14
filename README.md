@@ -3,7 +3,7 @@
 ## Description
 User Story 
 AS user
-I want to view different recipes
+I want something to help me view different and random recipes based on basic protiens(ex. chicken, fish, beef, pork)
 SO THAT I can cook for my friends. 
 
 ## Acceptance Criteria
@@ -30,13 +30,14 @@ SO THAT I can cook for my friends.
 
 ## Work Completed 
 * Using Bulma as CSS framework
-* Two server-side APIs we used in the project: TheMealDB(https://www.themealdb.com/browse.php?s=meal) Edamam(https://www.edamam.com)
+* Two server-side APIs we used in the project: TheMealDB(https://www.themealdb.com/browse.php?s=meal)to get our recipe Edamam(https://www.edamam.com)
 * Created History log to display previous searches 
+* Made webpage responsive so can be viewed from multiple devices
 
 ## Website 
 
 ## Screenshot
-![screenshot]
+![screenshot](/assets/img/_Users_nestormontanez_bootcamp_Project-1-Get-Food_index.html.png)
 
 ## Contact 
 ["Enter Name here" on Github](Apply your url link to your own github)
