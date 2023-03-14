@@ -15,7 +15,7 @@ searchBtn.addEventListener("click", () => {
     } else {
     fetch(url + userInp)
     .then((response) => response.json())
-    .then((data) => {
+    .then(async (data) => {
         console.log(data)
         console.log(data.meals.length);
         var arrayLength = data.meals.length;
@@ -45,53 +45,80 @@ searchBtn.addEventListener("click", () => {
           
         }
         console.log(ingredientList)
-        var nutritionArray = ingredientList;
+        var nutritionArray  = [...ingredientList];
         for(var i=0; i < nutritionArray.length; i++) {
           nutritionArray[i] = nutritionArray[i].replaceAll(" ", "%20");
-         }
-        
+        }
+        console.log(ingredientList)
         var nutritionBodyEl = $('#nutrition_body');
+        var totalCaloriesEl = $('#total_cal');
+        var totalCarbsEl = $('#total_carb');
+        var totalFatEl = $('#total_fat');
+        var totalCholesterolEl = $('#total_chol');
+        var totalProteinEl = $('#total_pro');
+        var totalSodiumEl = $('#total_sodium');
         nutritionBodyEl.empty();
-        var totalCalories = 0
-        for(var i=0; i < nutritionArray.length; i++){
-          var nutritionIngredientRow = $('<tr>');
-          fetch(nutritionUrl + nutritionArray[i])
+
+
+
+        var totalCalories = 0;
+        var totalProtein = 0;
+        var totalFat = 0;
+        var totalSodium = 0;
+        var totalCholesterol = 0;
+        var totalCarbs = 0;
+        for(let i=0; i < nutritionArray.length; i++){
+          var nutritionIngredientRow = $('<tr>')
+          
+          await fetch(nutritionUrl + nutritionArray[i])
           .then((nutritionResponse) => nutritionResponse.json())
           .then((nutritionData) =>{
 
+            var ingredient = ingredientList[i];
+            var ingredientData = $('<td>').text(ingredient);
+            nutritionIngredientRow.append(ingredientData)
+
             var calories = nutritionData.calories
             var caloriesData = $('<td>').text(calories);
-            nutritionIngredientRow.append(caloriesData)
+            nutritionIngredientRow.append(caloriesData);
 
             var fat = nutritionData.totalNutrients.FAT.quantity
             var fatData = $('<td>').text(fat);
-            nutritionIngredientRow.append(fatData)
+            nutritionIngredientRow.append(fatData);
 
             var cholesterol = nutritionData.totalNutrients.CHOLE.quantity
             var cholesterolData = $('<td>').text(cholesterol);
-            nutritionIngredientRow.append(cholesterolData )
+            nutritionIngredientRow.append(cholesterolData);
 
             var carbs = nutritionData.totalNutrients.CHOCDF.quantity
             var carbstData = $('<td>').text(carbs);
-            nutritionIngredientRow.append(carbstData)
+            nutritionIngredientRow.append(carbstData);
 
             var sodium = nutritionData.totalNutrients.NA.quantity
             var sodiumData = $('<td>').text(sodium);
-            nutritionIngredientRow.append(sodiumData)
+            nutritionIngredientRow.append(sodiumData);
+
 
             var protein = nutritionData.totalNutrients.PROCNT.quantity
             var proteinData = $('<td>').text(protein);
-            nutritionIngredientRow.append(proteinData)
-            
+            nutritionIngredientRow.append(proteinData);
             nutritionBodyEl.append(nutritionIngredientRow);
+            
             totalCalories = totalCalories + calories;
-            if (i == nutritionArray.length){
-              console.log(totalCalories)  
-            }
+            totalProtein = totalProtein + protein;
+            totalFat = totalFat + fat;
+            totalSodium = totalSodium + sodium;
+            totalCholesterol = totalCholesterol + cholesterol;
+            totalCarbs = totalCarbs + carbs;
           })
-          
 
         }
+        totalCaloriesEl.text(`${totalCalories} cal`);
+        totalCarbsEl.text(`${totalCarbs} g`);
+        totalFatEl.text(`${totalFat} g`);
+        totalCholesterolEl.text(`${totalCholesterol} g`);
+        totalProteinEl.text(`${totalProtein} g`);
+        totalSodiumEl.text(`${totalSodium} g`);
         
   displayIMG.innerHTML = "<img src =" + foodIMG + ">"
     })}
