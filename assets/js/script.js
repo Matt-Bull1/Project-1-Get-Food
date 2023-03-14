@@ -54,10 +54,6 @@ function getRecipe () {
         var pickMeal = Math.floor(Math.random() * arrayLength)
         console.log(pickMeal)
         var randomMeal = data.meals[pickMeal]
-        console.log(randomMeal)
-        console.log(randomMeal.strMealThumb)
-        console.log(randomMeal.strMeal)
-        console.log(randomMeal.strInstructions)
         var cookIntruct = randomMeal.strInstructions
         var foodIMG = randomMeal.strMealThumb
         var foodName = randomMeal.strMeal
@@ -113,28 +109,28 @@ function getRecipe () {
             nutritionIngredientRow.append(ingredientData)
 
             var calories = nutritionData.calories
-            var caloriesData = $('<td>').text(calories);
+            var caloriesData = $('<td>').text(calories.toFixed(3));
             nutritionIngredientRow.append(caloriesData);
 
             var fat = nutritionData.totalNutrients.FAT.quantity
-            var fatData = $('<td>').text(fat);
+            var fatData = $('<td>').text(fat.toFixed(3));
             nutritionIngredientRow.append(fatData);
 
             var cholesterol = nutritionData.totalNutrients.CHOLE.quantity
-            var cholesterolData = $('<td>').text(cholesterol);
+            var cholesterolData = $('<td>').text(cholesterol.toFixed(3));
             nutritionIngredientRow.append(cholesterolData);
 
             var carbs = nutritionData.totalNutrients.CHOCDF.quantity
-            var carbstData = $('<td>').text(carbs);
+            var carbstData = $('<td>').text(carbs.toFixed(3));
             nutritionIngredientRow.append(carbstData);
 
             var sodium = nutritionData.totalNutrients.NA.quantity
-            var sodiumData = $('<td>').text(sodium);
+            var sodiumData = $('<td>').text(sodium.toFixed(3));
             nutritionIngredientRow.append(sodiumData);
 
 
             var protein = nutritionData.totalNutrients.PROCNT.quantity
-            var proteinData = $('<td>').text(protein);
+            var proteinData = $('<td>').text(protein.toFixed(3));
             nutritionIngredientRow.append(proteinData);
             nutritionBodyEl.append(nutritionIngredientRow);
             
@@ -147,12 +143,12 @@ function getRecipe () {
           })
 
         }
-        totalCaloriesEl.text(`${totalCalories} cal`);
-        totalCarbsEl.text(`${totalCarbs} g`);
-        totalFatEl.text(`${totalFat} g`);
-        totalCholesterolEl.text(`${totalCholesterol} g`);
-        totalProteinEl.text(`${totalProtein} g`);
-        totalSodiumEl.text(`${totalSodium} g`);
+        totalCaloriesEl.text(`${Math.round(totalCalories)} cal`);
+        totalCarbsEl.text(`${Math.round(totalCarbs)} g`);
+        totalFatEl.text(`${Math.round(totalFat)} g`);
+        totalCholesterolEl.text(`${Math.round(totalCholesterol)} g`);
+        totalProteinEl.text(`${Math.round(totalProtein)} g`);
+        totalSodiumEl.text(`${Math.round(totalSodium)} mg`);
         
   
     })}
