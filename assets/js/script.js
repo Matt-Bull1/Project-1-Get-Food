@@ -10,7 +10,7 @@ var lastRecipe = "";
 var currentRecipe = "";
 
 
-var nutritionUrl = "https://api.edamam.com/api/nutrition-data?app_id=97a4a0a7&app_key=c9964d9d543eaae9d00a7817640d1624&nutrition-type=cooking&ingr="
+var nutritionUrl = "https://api.edamam.com/api/nutrition-data?app_id=7be93088&app_key=9575e635ef2fabdcc06fb9a2fca9fa99&nutrition-type=cooking&ingr="
 
 flipBtn.addEventListener("click", () => {
   var flipCard = document.getElementById("nutrition")
@@ -54,10 +54,6 @@ function getRecipe () {
         var pickMeal = Math.floor(Math.random() * arrayLength)
         console.log(pickMeal)
         var randomMeal = data.meals[pickMeal]
-        console.log(randomMeal)
-        console.log(randomMeal.strMealThumb)
-        console.log(randomMeal.strMeal)
-        console.log(randomMeal.strInstructions)
         var cookIntruct = randomMeal.strInstructions
         var foodIMG = randomMeal.strMealThumb
         var foodName = randomMeal.strMeal
@@ -113,28 +109,52 @@ function getRecipe () {
             nutritionIngredientRow.append(ingredientData)
 
             var calories = nutritionData.calories
-            var caloriesData = $('<td>').text(calories);
+            var caloriesData = $('<td>').text(calories.toFixed(3));
             nutritionIngredientRow.append(caloriesData);
-
-            var fat = nutritionData.totalNutrients.FAT.quantity
-            var fatData = $('<td>').text(fat);
+            try {
+              var fat = nutritionData.totalNutrients.FAT.quantity
+            }
+            catch(err) {
+              var fat = 0
+            }
+            var fatData = $('<td>').text(fat.toFixed(3));
             nutritionIngredientRow.append(fatData);
 
-            var cholesterol = nutritionData.totalNutrients.CHOLE.quantity
-            var cholesterolData = $('<td>').text(cholesterol);
+            try {
+              var cholesterol = nutritionData.totalNutrients.CHOLE.quantity
+            }
+            catch(err) {
+              var cholesterol = 0
+            }
+            var cholesterolData = $('<td>').text(cholesterol.toFixed(3));
             nutritionIngredientRow.append(cholesterolData);
-
-            var carbs = nutritionData.totalNutrients.CHOCDF.quantity
-            var carbstData = $('<td>').text(carbs);
+            try {
+              var carbs = nutritionData.totalNutrients.CHOCDF.quantity
+            }
+            catch(err) {
+              var carbs = 0
+            }
+            
+            var carbstData = $('<td>').text(carbs.toFixed(3));
             nutritionIngredientRow.append(carbstData);
 
-            var sodium = nutritionData.totalNutrients.NA.quantity
-            var sodiumData = $('<td>').text(sodium);
+            try {
+              var sodium = nutritionData.totalNutrients.NA.quantity
+            }
+            catch(err) {
+              var sodium = 0
+            }
+            var sodiumData = $('<td>').text(sodium.toFixed(3));
             nutritionIngredientRow.append(sodiumData);
 
-
-            var protein = nutritionData.totalNutrients.PROCNT.quantity
-            var proteinData = $('<td>').text(protein);
+            try {
+              var protein = nutritionData.totalNutrients.PROCNT.quantity
+            }
+            catch(err) {
+              var protein = 0
+            }
+            
+            var proteinData = $('<td>').text(protein.toFixed(3));
             nutritionIngredientRow.append(proteinData);
             nutritionBodyEl.append(nutritionIngredientRow);
             
@@ -147,12 +167,12 @@ function getRecipe () {
           })
 
         }
-        totalCaloriesEl.text(`${totalCalories} cal`);
-        totalCarbsEl.text(`${totalCarbs} g`);
-        totalFatEl.text(`${totalFat} g`);
-        totalCholesterolEl.text(`${totalCholesterol} g`);
-        totalProteinEl.text(`${totalProtein} g`);
-        totalSodiumEl.text(`${totalSodium} g`);
+        totalCaloriesEl.text(`${Math.round(totalCalories)} cal`);
+        totalCarbsEl.text(`${Math.round(totalCarbs)} g`);
+        totalFatEl.text(`${Math.round(totalFat)} g`);
+        totalCholesterolEl.text(`${Math.round(totalCholesterol)} g`);
+        totalProteinEl.text(`${Math.round(totalProtein)} g`);
+        totalSodiumEl.text(`${Math.round(totalSodium)} mg`);
         
   
     })}
