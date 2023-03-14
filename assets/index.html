@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Foodie</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+  </head>
+  <body>
+   <header class="section"> 
+      <div class="container">
+        <h1 class="title">
+          Hello Foodie!
+        </h1>
+      </div>
+  </header> 
+  
+    <section>
+
+    <form class="search box filler">
+      <div class="field">
+
+        <label for="search-recipe" class="label">Search</label>
+        
+        <div class="control">
+          <input id="user-inp" class="input" type="recipe" placeholder="Search Recipes">
+        </div>
+        
+
+        
+        <div class="buttons">
+          <button id="search-btn" type="button" class="button is-link is-light">Search</button>
+        </div>
+
+        <div class="row">
+          <ul id="recipe-results" class="list-group"></ul>
+          <button id="clear-storage" class="button is-link is-light">Clear</button>   
+        </div>
+
+        
+      </div> 
+    </form>
+    
+
+    <div class="recipe box filler">
+      <label class="label">Recipes</label>
+      <div id="displayIMG"></div>
+      <div id="foodName" class="label"></div>
+      <div id="result"></div>    
+    </div>
+
+
+    <div id= nutrition class="nutrition">
+      <div class="nutrition-front box">
+        <label class="label">Ingredients</label>
+        <div id="ingredientList"></div>
+        <button id="flipBtn" class="flip button is-link is-light">Nutrition!</button>  
+      </div>
+      <div class="nutrition-back box">
+        <label class="label">Nutritional information </label>
+        <button id="returnBtn" class="ingredientsBtn button is-link is-light">Ingredients!</button> 
+            <div class="columns is-centered">
+              <table class="table">
+                <thead>
+                  <tr>
+                      <th>Ingredients</th>
+                      <th>Calories</th>
+                      <th>Fat</th>
+                      <th>Cholesterol</th>
+                      <th>Carbs</th>
+                      <th>Sodium</th>
+                      <th>Protein</th>
+                  </tr>
+                </thead>
+                <tfoot id="nutrition_foot">
+                  <tr>
+                      <th>Total</th>
+                      <th id="total_cal">1290</th>
+                      <th id="total_fat">1290</th>
+                      <th id="total_chol">1290</th>
+                      <th id="total_carb">1290</th>
+                      <th id="total_sodium">1290</th>
+                      <th id="total_pro">1290</th>
+                      <th></th>
+                  </tr>
+                </tfoot>
+                <tbody id="nutrition_body">
+              </tbody>
+              </table>
+          </div>
+    
+      </div> 
+    </div>
+
+    
+
+  </section>
+
+
+
+  
+ 
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="assets/js/script.js"></script>
+  </body>
+</html>

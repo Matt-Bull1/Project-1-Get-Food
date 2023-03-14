@@ -1,0 +1,140 @@
+.title {
+    left: auto;
+    position: relative;
+    
+}
+body {
+    height: 100vh;
+    background-color: #ae86b5;
+    overflow: auto;
+}
+
+section {
+    display: flex;
+    height: 75vh;
+    gap: 3%;
+}
+
+.search.box {
+    margin-inline-start: 1.5%;
+    width: 17%;
+    
+}
+
+.list-group-item.active {
+    background-color: #ae86b5;
+    border-color: #ae86b5;
+}
+
+.button {
+    margin-top: 4%;
+}
+
+div.box {
+    margin-inline-start: -1%;
+    width: 38%;
+    
+}
+
+#result {
+    overflow: auto;
+    height:calc(100% - 280px);
+}
+
+#displayIMG {
+    width: 200px;
+}
+
+#ingredientList {
+    overflow: auto;
+    height:calc(100% - 180px); 
+}
+
+
+.nutrition {
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease 0s;
+    position: relative;
+    width: 36%;
+    
+}
+
+.nutrition-front {
+    backface-visibility: hidden;
+    width: 100% !important;
+    z-index: 1000;
+    position: absolute;
+    height: 100%;
+}
+
+.ingredientsBtn.button {
+    left: 54%;
+    top: 5%;
+    width: 48%;
+    height: 10%;
+    
+} 
+
+.nutrition-back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    transform: rotateY(180deg);
+    width: 100% !important;
+    z-index: 999;
+    height: 100%;
+}
+
+.flip {
+    transform: rotateY( 180deg);
+}
+
+#flipBtn {
+    left: 54%;
+    top: 6%;
+    width: 48%;
+    height: 10%;
+    transform: rotateY(0deg);
+}
+
+#returnBtn {
+    top: 74%;
+
+}
+
+.box{
+    margin-bottom: 0 !important;    
+}
+
+@media screen and (max-width: 1000px){
+
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+    
+
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+
+    .search.box, .nutrition, div.box, div.nutrition-back {
+        width: 80%;
+        margin: 0;
+    }
+
+    .filler {
+        width: 80%;
+    }
+
+    .nutrition-front {
+        height: auto;
+    }
+    
+}
+
+
+
