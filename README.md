@@ -30,5 +30,3 @@ https://matt-bull1.github.io/Project-1-Get-Food/#
 [Qassim Darawsheh on Github](https://github.com/marchinthedark)
 [Matt Bull on Github](https://github.com/Matt-Bull1)
 [Nestor Montañez on Github](https://github.com/Nuno0123)
-Work Completed
-Website
