@@ -30,4 +30,4 @@ Screenshot
 ![screenshot](assets/img/screenshot.png)
 
 Contact
-["Enter Name here" on Github](Apply your url link to your own github) ["Enter Name here" on Github](Apply your url link to your own github) [Matt Bull](https://github.com/Matt-Bull1) Nestor Montañez on Github
+[Joshua Clarke](https://github.com/JtnClarke) [Qassim Darawsheh](https://github.com/marchinthedark) [Matt Bull](https://github.com/Matt-Bull1) Nestor Montañez on Github
