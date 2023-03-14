@@ -26,7 +26,7 @@ Have a quality README (with unique name, description, technologies used, screens
 Work Completed
 Website
 Screenshot
-![screenshot](assets/img/screenshot.png
+![screenshot](assets/img/screenshot.png)
 
 Contact
 ["Enter Name here" on Github](Apply your url link to your own github) ["Enter Name here" on Github](Apply your url link to your own github) [Matt Bull](https://github.com/Matt-Bull1) Nestor Montañez on Github
