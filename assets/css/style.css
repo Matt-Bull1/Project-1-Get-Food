@@ -1,6 +1,7 @@
 body {
     height: 100vh;
     background-color: #ae86b5;
+    overflow: auto;
 }
 
 section {
@@ -12,6 +13,7 @@ section {
 .search.box {
     margin-inline-start: 1.5%;
     width: 17%;
+    
 }
 
 .list-group-item.active {
@@ -33,9 +35,16 @@ div.box {
     overflow: auto;
     height:calc(100% - 280px);
 }
+
 #displayIMG {
     width: 200px;
 }
+
+#ingredientList {
+    overflow: auto;
+    height:calc(100% - 180px); 
+}
+
 
 .nutrition {
     transform-style: preserve-3d;
@@ -55,14 +64,11 @@ div.box {
 
 .ingredientsBtn.button {
     left: 54%;
-    top: 6%;
+    top: 5%;
     width: 48%;
     height: 10%;
     
-
-
 } 
-
 
 .nutrition-back {
     backface-visibility: hidden;
@@ -71,8 +77,8 @@ div.box {
     transform: rotateY(180deg);
     width: 100% !important;
     z-index: 999;
-    height: 100%;
 }
+
 .flip {
     transform: rotateY( 180deg);
 }
@@ -85,12 +91,45 @@ div.box {
     transform: rotateY(0deg);
 }
 
+#returnBtn {
+    top: 74%;
 
-  
-   
+}
+
 .box{
     margin-bottom: 0 !important;    
 }
+
+@media screen and (max-width: 1000px){
+
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+    
+
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+
+    .search.box, .nutrition, div.box, div.nutrition-back {
+        width: 80%;
+        margin: 0;
+    }
+
+    .filler {
+        width: 80%;
+    }
+
+    .nutrition-front {
+        height: auto;
+    }
+    
+}
+
 
 
 
